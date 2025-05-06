@@ -202,7 +202,8 @@ function mostrarPergunta(index) {
   }
 
   document.getElementById("score").textContent = "Pontos: " + score + "/10";
-  document.getElementById("wrongAnswear").textContent = "Erros: " + wrongAnswer + "/5";
+  document.getElementById("wrongAnswear").textContent =
+    "Erros: " + wrongAnswer + "/5";
 }
 
 function mostrarResultado(mensagem) {
@@ -224,10 +225,14 @@ function verificarResposta(respostaUsuario) {
   } else {
     wrongAnswer++;
     if (wrongAnswer < imagensForca.length) {
-      document.getElementById("gallowImage").src = `./assets/${imagensForca[wrongAnswer]}`;
+      document.getElementById(
+        "gallowImage"
+      ).src = `./assets/${imagensForca[wrongAnswer]}`;
     }
     if (wrongAnswer === 5) {
-      document.getElementById("gallowImage").src = `./assets/${imagensForca[5]}`;
+      document.getElementById(
+        "gallowImage"
+      ).src = `./assets/${imagensForca[5]}`;
       mostrarResultado("Game Over!");
       return;
     }
